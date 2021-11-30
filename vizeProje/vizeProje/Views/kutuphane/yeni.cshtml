@@ -1,0 +1,70 @@
+﻿@model vizeProje.Models.kutuphane
+
+@{
+    ViewData["Title"] = "yeni";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Yeni Kayıt Ekle</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="yeni">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="kitapNo" class="control-label">Kitap Numarası</label>
+                <input asp-for="kitapNo" class="form-control" />
+                <span asp-validation-for="kitapNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="kitapAdi" class="control-label">Kitap Adı</label>
+                <input asp-for="kitapAdi" class="form-control" />
+                <span asp-validation-for="kitapAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="kitapYazari" class="control-label">Kitap Yazarı</label>
+                <input asp-for="kitapYazari" class="form-control" />
+                <span asp-validation-for="kitapYazari" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="kitapSayfaSayi" class="control-label">Kitap Sayfa Sayısı</label>
+                <input asp-for="kitapSayfaSayi" class="form-control" />
+                <span asp-validation-for="kitapSayfaSayi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ogrAdi" class="control-label">Öğrenci Adı</label>
+                <input asp-for="ogrAdi" class="form-control" />
+                <span asp-validation-for="ogrAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ogrSoyad" class="control-label">Öğrenci Soyadı</label>
+                <input asp-for="ogrSoyad" class="form-control" />
+                <span asp-validation-for="ogrSoyad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="alisTarihi" class="control-label">Kitabı Alış Tarihi</label>
+                <input asp-for="alisTarihi" class="form-control" />
+                <span asp-validation-for="alisTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="teslimTarihi" class="control-label">Kitap Teslim Tarihi</label>
+                <input asp-for="teslimTarihi" class="form-control" />
+                <span asp-validation-for="teslimTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="kitapKonusu" class="control-label">Kitabın Konusu </label>
+                <input asp-for="kitapKonusu" class="form-control" />
+                <span asp-validation-for="kitapKonusu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" asp-action="yeni" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="listele">Listeye Geri Dön</a>
+</div>
+

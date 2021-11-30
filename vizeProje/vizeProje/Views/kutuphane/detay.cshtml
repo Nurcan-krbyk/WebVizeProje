@@ -1,0 +1,72 @@
+﻿@model vizeProje.Models.kutuphane
+
+@{
+    ViewData["Title"] = "Detay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>detay</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Kitap Numarası =
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.kitapNo)
+        </dd>
+        <dt class="col-sm-2">
+            Kitap Adı =
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.kitapAdi)
+        </dd>
+        <dt class="col-sm-2">
+            Kitap Yazarı  =
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.kitapYazari)
+        </dd>
+        <dt class="col-sm-2">
+            Kitap Sayfa Sayısı  =
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.kitapSayfaSayi)
+        </dd>
+        <dt class="col-sm-2">
+            Öğrenci Adı    =
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ogrAdi)
+        </dd>
+        <dt class="col-sm-2">
+            Öğrenci Soyadı   =
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ogrSoyad)
+        </dd>
+        <dt class="col-sm-2">
+            Kitabı Alış Tarihi  =
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.alisTarihi)
+        </dd>
+        <dt class="col-sm-2">
+            Kitap Teslim Tarihi =
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.teslimTarihi)
+        </dd>
+        <dt class="col-sm-2">
+            Kitabın Konusu =
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.kitapKonusu)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Güncelle", "Guncelle", new { kitapNo = Model.kitapNo }) |
+<a asp-action="Listele">Listeye Geri Dön</a>
+</div>

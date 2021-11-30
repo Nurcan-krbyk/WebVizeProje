@@ -1,0 +1,84 @@
+﻿@model IEnumerable<vizeProje.Models.kutuphane>
+
+@{
+    ViewData["Title"] = "listele";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Kütüphane Listeleri</h1>
+
+<p>
+    <a asp-action="yeni">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Kitap Numarası
+            </th>
+            <th>
+                Kitap Adı
+            </th>
+            <th>
+                Kitap Yazarı
+            </th>
+            <th>
+                Sayfa Sayısı
+            </th>
+            <th>
+                Öğrenci Adı
+            </th>
+            <th>
+                Öğrenci Soyadı
+            </th>
+            <th>
+                Kitabı Alış Tarihi
+            </th>
+            <th>
+                Kitap Teslim Tarihi
+            </th>
+            <th>
+                Kitabın Konusu
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.kitapNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kitapAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kitapYazari)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kitapSayfaSayi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ogrAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ogrSoyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.alisTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.teslimTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kitapKonusu)
+            </td>
+            <td>
+                @Html.ActionLink("Güncelle", "guncelle", new { kitapNo = item.kitapNo }) |
+                @Html.ActionLink("Detay", "detay", new { kitapNo = item.kitapNo }) |
+                @Html.ActionLink("Sil", "sil", new { kitapNo = item.kitapNo })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
